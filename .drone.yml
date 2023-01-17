@@ -1,0 +1,17 @@
+---
+kind: pipeline
+type: docker
+name: default
+steps:
+
+- name: "build and publish docker image"
+  image: plugins/docker
+  settings:
+    registry: gitea.linuxcode.net
+    repo: gitea.linuxcode.net/linuxcode/dbml-go
+    dockerfile: dockerfile
+    tags: latest
+    username: 
+      from_secret: drone_docker_username
+    password: 
+      from_secret: drone_docker_password
