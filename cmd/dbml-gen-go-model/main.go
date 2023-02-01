@@ -15,11 +15,11 @@ func main() {
 		out              = "model"
 		gopackage        = "model"
 		fieldtags        = []string{"db", "json", "mapstructure"}
-		shouldGenTblName = false
+		shouldGenTblName = true
 		rememberAlias    = false
 		recursive        = false
 		exclude          = ""
-		isPostgres       = false
+		isPostgres       = true
 	)
 
 	cmd := &cobra.Command{
