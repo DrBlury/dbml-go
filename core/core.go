@@ -1,6 +1,6 @@
 package core
 
-import "github.com/duythinht/dbml-go/token"
+import "dbml-go/token"
 
 // DBML structure
 type DBML struct {
@@ -84,7 +84,7 @@ type Relationship struct {
 	Type RelationshipType
 }
 
-//RelationshipMap ...
+// RelationshipMap ...
 var RelationshipMap = map[token.Token]RelationshipType{
 	token.GTR: ManyToOne,
 	token.LSS: OneToMany,

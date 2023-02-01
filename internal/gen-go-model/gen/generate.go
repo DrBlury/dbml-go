@@ -15,6 +15,7 @@ type Opts struct {
 	RememberAlias    bool
 	Recursive        bool
 	Exclude          string
+	IsPostgres       bool
 }
 
 // Generate go model
@@ -31,6 +32,7 @@ func Generate(opts Opts) {
 	g.gopackage = opts.Package
 	g.fieldtags = opts.FieldTags
 	g.shouldGenTblName = opts.ShouldGenTblName
+	g.isPostgres = opts.IsPostgres
 
 	for _, dbml := range dbmls {
 		g.reset(opts.RememberAlias)

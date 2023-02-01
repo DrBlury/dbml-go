@@ -5,9 +5,9 @@ import (
 
 	"os"
 
-	"github.com/duythinht/dbml-go/token"
+	token "dbml-go/token"
 
-	"github.com/duythinht/dbml-go/scanner"
+	scanner "dbml-go/scanner"
 )
 
 func main() {

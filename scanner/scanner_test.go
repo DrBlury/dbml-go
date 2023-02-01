@@ -1,10 +1,9 @@
 package scanner
 
 import (
+	"dbml-go/token"
 	"strings"
 	"testing"
-
-	"github.com/duythinht/dbml-go/token"
 )
 
 func sc(str string) *Scanner {

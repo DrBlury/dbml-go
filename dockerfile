@@ -13,4 +13,4 @@ RUN go build ./cmd/dbml-gen-go-model/main.go
 # Copy the binary to the production image from the builder stage
 FROM alpine:latest
 WORKDIR /app
-COPY --from=build /app/main ./dbml-go-generator
+COPY --from=build /app/main ./dbml-go/-generator

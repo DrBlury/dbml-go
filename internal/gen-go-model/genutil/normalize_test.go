@@ -21,6 +21,7 @@ func TestNormalizeGoType(t *testing.T) {
 		"countries":  "Country",
 		"watches":    "Watch",
 		"the_heroes": "TheHero",
+		"zero":       "Zero",
 	} {
 		if out := NormalizeGoTypeName(s); out != s1 {
 			t.Fatalf("in: %s, out: %s, expected: %s", s, out, s1)

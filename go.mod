@@ -1,6 +1,6 @@
-module github.com/duythinht/dbml-go
+module dbml-go
 
-go 1.14
+go 1.19
 
 require (
 	github.com/dave/jennifer v1.4.0

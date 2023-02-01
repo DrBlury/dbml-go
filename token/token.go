@@ -158,12 +158,3 @@ func Lookup(ident string) Token {
 	}
 	return IDENT
 }
-
-func IsIdent(t Token) bool {
-	switch t {
-	case IDENT:
-		return true
-	default:
-		return _keywordBeg < t && t < _miscEnd
-	}
-}
