@@ -38,7 +38,7 @@ func (g *generator) genEnum(enum core.Enum) error {
 	).Id("Scan").Params(
 		jen.Id("i").Interface(),
 	).Params(jen.Err().Error()).Block(
-		jen.List(jen.Id("s"), jen.Id("ok")).Op(":=").Id("i").Assert(jen.Index().String()),
+		jen.List(jen.Id("s"), jen.Id("ok")).Op(":=").Id("i").Assert(jen.String()),
 		jen.If(jen.Op("!").Id("ok").Block(
 			jen.Return(jen.Qual("fmt", "Errorf").Call(jen.List(jen.Lit("value (%#v) is not of the expected type string"), jen.Id("i")))),
 		)),
@@ -46,7 +46,7 @@ func (g *generator) genEnum(enum core.Enum) error {
 			for _, value := range enum.Values {
 				v := genutil.NormalLizeGoName(value.Name)
 
-				group.Case(jen.Qual("reflect", "DeepEqual").Call(jen.List(jen.Id("s"), jen.Index().String().Params(jen.Lit(value.Name))))).Block(
+				group.Case(jen.Qual("reflect", "DeepEqual").Call(jen.List(jen.Id("s"), jen.Lit(value.Name)))).Block(
 					jen.Op("*").Id("v").Op("=").Id(v),
 				)
 			}
